@@ -101,7 +101,7 @@ def send_help(chat_id, text, keyboard=None):
 
     if not keyboard:
         kb = paginate_modules(0, HELPABLE, "help")
-        kb.append([InlineKeyboardButton(text='Support', url='https://t.me/TedezaSupportChat'),
+        kb.append([InlineKeyboardButton(text='Support', url='https://t.me/FlyingKILI'),
         InlineKeyboardButton(text='Back', callback_data='start_back'), InlineKeyboardButton(text="Try inline", switch_inline_query_current_chat="")])
         keyboard = InlineKeyboardMarkup(kb)
     dispatcher.bot.send_message(
@@ -149,28 +149,13 @@ def start(update: Update, context: CallbackContext):
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [
-                            InlineKeyboardButton(
-                                text=gs(chat.id, "support_chat_link_btn"),
-                                url=f"https://t.me/TedezaSupportChat",
-                            ),
-                            InlineKeyboardButton(
-                                text=gs(chat.id, "updates_channel_link_btn"),
-                                url="https://t.me/Tedeza_News",
-                            ),
-                            InlineKeyboardButton(
-                                text=gs(chat.id, "src_btn"),
-                                url="https://github.com/EagleCoderZ/Tedezarobot",
-                            ),
-                            
-                        ],
 
                         [
 
                              InlineKeyboardButton(
                                  text="Try inline",
                                  switch_inline_query_current_chat="",
-                             ),
+                         [    
                              InlineKeyboardButton(
                                 text="Help",
                                 callback_data="help_back",
